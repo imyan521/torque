@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1105</width>
+    <height>799</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="button1">
+      <property name="text">
+       <string>button1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>扭矩仪</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QWidget" name="torque" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QWidget" name="leftLayout" native="true">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QWidget" name="widget_4" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QCustomPlot" name="plotTorque" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>400</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <widget class="QLabel" name="labelTorque">
+                     <property name="text">
+                      <string>扭力</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelMaxTorque">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelMinTorque">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_5" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QCustomPlot" name="plotAngle" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>400</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_3">
+                   <item>
+                    <widget class="QLabel" name="labelAngle">
+                     <property name="text">
+                      <string>倾斜角</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelMaxAngle">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="labelMinAngle">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="rigthLayout" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QComboBox" name="fileFormatComboBox">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="editable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentText">
+                   <string/>
+                  </property>
+                  <property name="currentIndex">
+                   <number>-1</number>
+                  </property>
+                  <property name="maxVisibleItems">
+                   <number>10</number>
+                  </property>
+                  <property name="placeholderText">
+                   <string/>
+                  </property>
+                  <property name="frame">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>导出</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QPushButton" name="connect_device">
+                  <property name="text">
+                   <string>连接设备配置</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveTorqueZeroButton">
+                  <property name="text">
+                   <string>扭力置零</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveAngleZeroButton">
+                  <property name="text">
+                   <string>角度置零</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="startButton">
+                  <property name="text">
+                   <string>开始</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pauseButton">
+                  <property name="text">
+                   <string>暂停</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="resetButton">
+                  <property name="text">
+                   <string>终止</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>压力标定</string>
+       </attribute>
+       <widget class="QPushButton" name="StopButton">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>710</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>暂停</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="ReminderEdit">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>720</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="ValueEdit">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>670</y>
+          <width>104</width>
+          <height>70</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="ErrorLabel">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>770</y>
+          <width>111</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>当前读取误差</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="CurrnetValuelabel">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>760</y>
+          <width>121</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>当前读取数值</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>641</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3"/>
+       </widget>
+       <widget class="QLineEdit" name="ErrorLabel_2">
+        <property name="geometry">
+         <rect>
+          <x>1170</x>
+          <y>770</y>
+          <width>101</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>均方差</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="configbotton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>670</y>
+          <width>151</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>写入设备配置</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="MeanErrorEdit">
+        <property name="geometry">
+         <rect>
+          <x>1170</x>
+          <y>680</y>
+          <width>111</width>
+          <height>70</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="TestEdit">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>0</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>标定进度提示</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="Clientcombox">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>670</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>无设备连接</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="ClearButton">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>710</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>复位</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="ErrorEdit">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>680</y>
+          <width>104</width>
+          <height>70</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="TcpEdit">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>670</y>
+          <width>441</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>等待下位机连接，端口号：1234</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="startbutton">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>710</y>
+          <width>51</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>开始</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="connectdevice">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>720</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>连接设备配置</string>
+        </property>
+       </widget>
+       <widget class="QTabWidget" name="tabWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>10</y>
+          <width>571</width>
+          <height>621</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Tab 1</string>
+         </attribute>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>50</y>
+            <width>551</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <row>
+           <property name="text">
+            <string>行1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行2</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行3</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行4</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行5</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行6</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行7</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行8</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行9</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行10</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行11</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行12</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行13</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行14</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行15</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>行16</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>列1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列2</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列3</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列4</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列5</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列6</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列7</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列8</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列9</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列10</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列11</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列12</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列13</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列14</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列15</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>列16</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QPushButton" name="table_button">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>10</y>
+            <width>211</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>16*16实时压力分布图</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
+         <widget class="QTextEdit" name="pressure_edit">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>50</y>
+            <width>441</width>
+            <height>151</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="torque_edit">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>270</y>
+            <width>441</width>
+            <height>181</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>10</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>单点标定设备</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>220</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>扭矩仪</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1105</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
